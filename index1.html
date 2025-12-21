@@ -973,13 +973,7 @@
         }
 
         function exitQuiz() {
-            if(confirm("確定要暫時離開？(系統將自動儲存進度，並記錄目前成績)")) {
-                // 若為標準模式，中途退出時將目前成績寫入歷史紀錄
-                if (quizState.mode === 'standard' && currentQuizData.length > 0) {
-                    const currentScore = Math.round((quizState.score / currentQuizData.length) * 100);
-                    saveHistory(currentScore, `實驗 ${quizState.level} (未完)`);
-                }
-                
+            if(confirm("確定要結束測驗？(進度已自動儲存)")) {
                 goToDashboard();
             }
         }
