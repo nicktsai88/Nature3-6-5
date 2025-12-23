@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>6-5 分子與化學式</title>
+    <title>理化 (第3冊 6-5 分子與化學式)</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <style>
@@ -131,11 +131,8 @@
         .level-grid-btn:hover:not(:disabled) { transform: translateY(-3px); box-shadow: 0 6px 0 #bdc3c7; background: #eaf2f8; }
         .level-grid-btn:active:not(:disabled) { transform: translateY(2px); box-shadow: none; }
         .level-grid-btn:disabled { border-color: #bdc3c7; color: #bdc3c7; background: #f0f0f0; cursor: not-allowed; box-shadow: none;}
-        /* 修改點：加大圖示 */
-        .lvl-icon { font-size: 2.5em; margin-bottom: 5px; }
+        .lvl-icon { font-size: 1.8em; margin-bottom: 5px; }
         .lvl-score { font-size: 0.85em; font-weight: bold; color: var(--correct-color); }
-        /* 修改點：新增標題樣式，加大字體 */
-        .lvl-label { font-size: 1.3em; font-weight: bold; }
         
         /* 右側：極速刷題區 */
         .dashboard-speed-zone {
@@ -170,27 +167,13 @@
         .quiz-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
         .progress-bar-container { width: 100%; background: #e0e0e0; height: 10px; border-radius: 5px; overflow: hidden; margin-bottom: 20px; }
         .progress-bar-fill { height: 100%; background: var(--secondary-color); width: 0%; transition: width 0.3s; }
-        /* 修改點：題目字體加大至 1.5em */
-        .question-box { background: #fff; padding: 20px; border-radius: 10px; border-left: 5px solid var(--primary-color); box-shadow: 0 2px 10px rgba(0,0,0,0.05); font-size: 1.5em; line-height: 1.5; margin-bottom: 20px; }
+        .question-box { background: #fff; padding: 20px; border-radius: 10px; border-left: 5px solid var(--primary-color); box-shadow: 0 2px 10px rgba(0,0,0,0.05); font-size: 1.2em; line-height: 1.5; margin-bottom: 20px; }
         .option-list { list-style: none; padding: 0; }
-        /* 修改點：選項按鈕字體加大至 1.3em */
-        .option-btn { width: 100%; padding: 15px; margin-bottom: 10px; background: #fff; border: 2px solid #e0e0e0; border-radius: 10px; cursor: pointer; font-size: 1.3em; text-align: left; transition: 0.2s; position: relative; }
+        .option-btn { width: 100%; padding: 15px; margin-bottom: 10px; background: #fff; border: 2px solid #e0e0e0; border-radius: 10px; cursor: pointer; font-size: 1.1em; text-align: left; transition: 0.2s; position: relative; }
         .option-btn:hover { border-color: var(--primary-color); background: #f9f9f9; }
         .option-btn.correct { background: #d4edda; border-color: var(--correct-color); color: #155724; }
         .option-btn.wrong { background: #f8d7da; border-color: var(--wrong-color); color: #721c24; }
-        /* 修改點：解析區塊加上色塊區隔 (淺藍色) */
-        .explanation-box { 
-            background: #d4e6f1; /* 更明顯的淺藍色 */
-            padding: 20px; 
-            border-radius: 8px; 
-            border: 1px solid #a9cce3; /* 邊框 */
-            border-left: 6px solid var(--secondary-color); /* 保留左側強調線 */
-            margin-top: 25px; 
-            display: none; 
-            line-height: 1.6; 
-            font-size: 1.3em; 
-            color: #34495e;
-        }
+        .explanation-box { background: #eaf2f8; padding: 15px; border-radius: 8px; border-left: 4px solid var(--secondary-color); margin-top: 15px; display: none; line-height: 1.6;}
 
         /* --- Waterfall Quiz Mode (Quick Quiz) --- */
         #waterfall-screen { display: none; }
@@ -215,33 +198,22 @@
         .action-icon.active { color: var(--favorite-color); }
         .action-icon.trash:hover { color: var(--wrong-color); }
 
-        /* 修改點：瀑布流題目字體加大至 1.5em */
-        .wf-question-text { font-size: 1.5em; font-weight: bold; margin-bottom: 15px; padding-right: 60px; line-height: 1.5; color: #2c3e50; }
-        /* 修改點：題號改成紅底白字，並加強顯著性 */
-        .wf-q-badge { display: inline-block; background: #e74c3c; color: white; padding: 3px 10px; border-radius: 4px; font-size: 0.9em; font-weight: bold; margin-right: 8px; vertical-align: middle; }
+        .wf-question-text { font-size: 1.2em; font-weight: bold; margin-bottom: 15px; padding-right: 60px; line-height: 1.5; color: #2c3e50; }
+        .wf-q-badge { display: inline-block; background: var(--text-color); color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.8em; margin-right: 8px; vertical-align: middle; }
         .wf-img { max-width: 100%; max-height: 200px; display: block; margin: 10px 0; border-radius: 8px; border: 1px solid #eee; }
         
         .wf-options { display: grid; grid-template-columns: 1fr; gap: 8px; }
-        /* 修改點：瀑布流選項按鈕字體加大至 1.3em */
         .wf-opt-btn {
             padding: 12px; border: 2px solid #eee; background: #fff; border-radius: 8px;
-            text-align: left; cursor: pointer; font-size: 1.3em; transition: 0.2s;
+            text-align: left; cursor: pointer; font-size: 1em; transition: 0.2s;
         }
         .wf-opt-btn:hover:not(:disabled) { border-color: var(--quick-mode-color); background: var(--quick-mode-bg); }
         .wf-opt-btn.correct { background: #d4edda; border-color: var(--correct-color); color: #155724; font-weight: bold;}
         .wf-opt-btn.wrong { background: #f8d7da; border-color: var(--wrong-color); color: #721c24; }
         
-        /* 修改點：瀑布流解析區塊加上色塊區隔 (淺黃色) */
         .wf-explanation {
-            margin-top: 20px; 
-            background: #fff9c4; /* 淺黃色背景，與白色卡片區分 */
-            padding: 20px; 
-            border-radius: 8px;
-            border: 1px solid #f9e79f;
-            border-left: 6px solid #f1c40f; /* 黃色左側強調線 */
-            font-size: 1.3em; 
-            color: #7f8c8d; 
-            display: none;
+            margin-top: 15px; background: #f8f9fa; padding: 15px; border-radius: 8px;
+            font-size: 0.95em; color: #555; border-left: 4px solid #bdc3c7; display: none;
         }
 
         /* --- Collection & History --- */
@@ -308,8 +280,8 @@
 
     <!-- 歡迎畫面 -->
     <div id="welcome-screen" class="container-box fade-in">
-        <h1>6-5 分子與化學式</h1>
-        <div style="font-size: 4em; text-align: center; margin: 20px;">⚛️🧪🔬🧬</div>
+        <h1>理化 (第3冊 6-5 分子與化學式)</h1>
+        <div style="font-size: 4em; text-align: center; margin: 20px;">⚛️🧪</div>
         <p style="text-align: center; font-size: 1.2em;">請輸入代號，準備進行元素分析！</p>
         
         <div style="text-align:center;">
@@ -462,17 +434,13 @@
         // 設定與全域變數
         // 修改點 2 & 3: 更新關卡配置與總題數 (20+20+20+28=88)
         const LEVEL_CONFIG = [20, 20, 20, 28];
-        // 修改點：新增影片至播放清單
-        const YOUTUBE_PLAYLIST = ['aGZk0nEBWv4', 'advioIb8-gE'];
+        const YOUTUBE_PLAYLIST = ['aGZk0nEBWv4'];
         // 修改點 4: LocalStorage 前綴改為 Nature3-6-5_
         const APP_PREFIX = 'Nature3-6-5_';
         
         let player, isPlayerReady = false, isPlaying = false;
         let allQuestions = [], currentQuizData = [];
         let userName = "", currentAvatar = "Chris.png";
-        
-        // 修改點：新增當前影片索引追蹤
-        let currentVideoIdx = 0;
         
         // 測驗狀態
         let quizState = {
@@ -583,13 +551,11 @@
                     if (score >= 90) icon = '⚛️';
                     else if (score >= 70) icon = '🔬';
                     
-                    // 修改點：引入 class="lvl-label"
-                    btn.innerHTML = `<div class="lvl-icon">${icon}</div><div class="lvl-label">實驗${level}</div>${score !== undefined ? `<div class="lvl-score">${score}分</div>` : ''}`;
+                    btn.innerHTML = `<div class="lvl-icon">${icon}</div><div style="font-weight:bold;">實驗${level}</div>${score !== undefined ? `<div class="lvl-score">${score}分</div>` : ''}`;
                     btn.onclick = () => startStandardQuiz(level);
                 } else {
                     btn.disabled = true;
-                    // 修改點：引入 class="lvl-label"
-                    btn.innerHTML = `<div class="lvl-icon" style="filter:grayscale(1);">🔒</div><div class="lvl-label">實驗${level}</div>`;
+                    btn.innerHTML = `<div class="lvl-icon" style="filter:grayscale(1);">🔒</div><div>實驗${level}</div>`;
                 }
                 grid.appendChild(btn);
             });
@@ -810,11 +776,10 @@
                 const isFav = isFavorite(q.id);
                 const canDelete = (quizState.mode === 'mistake' || quizState.mode === 'favorite');
                 
-                // 修改點：使用空心/實心愛心切換 + &#xFE0E; 強制文字模式
                 let actionsHtml = `
                     <div class="card-actions">
                          ${canDelete ? `<span class="action-icon trash" onclick="deleteCardItem('${q.id}')">🗑️</span>` : ''}
-                        <span class="action-icon ${isFav ? 'active' : ''}" onclick="toggleWaterfallFav(this, '${q.id}')">${isFav ? '♥&#xFE0E;' : '♡&#xFE0E;'}</span>
+                        <span class="action-icon ${isFav ? 'active' : ''}" onclick="toggleWaterfallFav(this, '${q.id}')">❤</span>
                     </div>
                 `;
                 
@@ -868,7 +833,6 @@
             if(selected === correct) {
                 quizState.score++;
                 audioCorrect.play().catch(()=>{});
-                confetti({ particleCount: 50, origin: { y: 0.8 } });
             } else {
                 audioFail.play().catch(()=>{});
                 addToMistake(qId);
@@ -923,13 +887,9 @@
             if(list.includes(id)) {
                 list = list.filter(x => x !== id);
                 btn.classList.remove('active');
-                // 修改點：取消收藏時，變回空心愛心 + 強制文字模式
-                btn.innerHTML = '♡&#xFE0E;';
             } else {
                 list.push(id);
                 btn.classList.add('active');
-                // 修改點：收藏時，變為實心愛心 + 強制文字模式
-                btn.innerHTML = '♥&#xFE0E;';
             }
             localStorage.setItem(getUserKey('favoriteBank'), JSON.stringify(list));
             updateDashboardTools();
@@ -1099,7 +1059,7 @@
         function onYouTubeIframeAPIReady() {
             player = new YT.Player('yt-player', {
                 height: '100%', width: '100%',
-                videoId: YOUTUBE_PLAYLIST[currentVideoIdx], // 修改點：使用索引載入
+                videoId: YOUTUBE_PLAYLIST[0],
                 playerVars: { 'playsinline': 1, 'controls': 0, 'disablekb': 1, 'fs': 0, 'rel': 0 },
                 events: { 'onReady': onPlayerReady, 'onStateChange': onPlayerStateChange }
             });
@@ -1108,23 +1068,11 @@
         function onPlayerStateChange(e) { 
             isPlaying = (e.data == YT.PlayerState.PLAYING);
             document.getElementById('main-play-btn').innerText = isPlaying ? '⏸' : '▶';
-            if(e.data == YT.PlayerState.ENDED) player.playVideo(); // Loop current video
+            if(e.data == YT.PlayerState.ENDED) player.playVideo(); // Loop
         }
         function togglePlay() { if(isPlayerReady) isPlaying ? player.pauseVideo() : player.playVideo(); }
-        // 修改點：上一首功能
-        function prevTrack() { 
-            if(isPlayerReady) {
-                currentVideoIdx = (currentVideoIdx - 1 + YOUTUBE_PLAYLIST.length) % YOUTUBE_PLAYLIST.length;
-                player.loadVideoById(YOUTUBE_PLAYLIST[currentVideoIdx]);
-            }
-        }
-        // 修改點：下一首功能
-        function nextTrack() { 
-            if(isPlayerReady) {
-                currentVideoIdx = (currentVideoIdx + 1) % YOUTUBE_PLAYLIST.length;
-                player.loadVideoById(YOUTUBE_PLAYLIST[currentVideoIdx]);
-            }
-        } 
+        function prevTrack() { if(isPlayerReady) player.seekTo(0); }
+        function nextTrack() { if(isPlayerReady) player.seekTo(0); } // Single track list
         function setVolume(v) { if(isPlayerReady) player.setVolume(v); }
         function toggleVideoDisplay() {
             const wrap = document.getElementById('yt-wrapper');
