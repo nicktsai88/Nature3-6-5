@@ -209,9 +209,19 @@
             background: #fff; border-radius: 10px; padding: 20px; margin-bottom: 25px;
             box-shadow: 0 3px 10px rgba(0,0,0,0.05); border: 1px solid #eee; position: relative;
         }
+        /* 新增：答對時的綠色底色 */
+        .waterfall-card.card-correct {
+            background-color: #d4edda;
+            border-color: var(--correct-color);
+        }
+        /* 新增：答錯時的紅色底色 */
+        .waterfall-card.card-wrong {
+            background-color: #f8d7da;
+            border-color: var(--wrong-color);
+        }
+
         .waterfall-card.locked { opacity: 0.9; }
         .card-actions { position: absolute; top: 15px; right: 15px; display: flex; gap: 10px; }
-        /* 修改點：加大愛心與垃圾桶圖示的大小與點擊範圍 */
         .action-icon { cursor: pointer; font-size: 2.2em; transition: 0.2s; color: #bdc3c7; padding: 5px; }
         .action-icon.active { color: var(--favorite-color); }
         .action-icon.trash:hover { color: var(--wrong-color); }
@@ -241,7 +251,7 @@
             border: 1px solid #f9e79f;
             border-left: 6px solid #f1c40f; /* 黃色左側強調線 */
             font-size: 1.3em; 
-            color: #34495e; 
+            color: #34495e;  /* 修改點：字體顏色改為深鐵藍灰色 */
             display: none;
         }
 
@@ -319,7 +329,7 @@
         
         <div class="avatar-selection">
             <img src="images/Chris.png" class="avatar-option selected" onclick="selectAvatar('Chris.png', this)">
-            <img src="images/Louis.png" class="avatar-option" onclick="selectAvatar('Louis.png', this)">    
+            <img src="images/Louis.png" class="avatar-option" onclick="selectAvatar('Louis.png', this)">
             <img src="images/kitty.png" class="avatar-option" onclick="selectAvatar('kitty.png', this)">
         </div>
 
